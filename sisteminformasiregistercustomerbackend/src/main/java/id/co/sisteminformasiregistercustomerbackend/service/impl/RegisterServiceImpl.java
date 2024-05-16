@@ -22,7 +22,7 @@ public class RegisterServiceImpl implements RegisterService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("reg_getDataRegister", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("reg_getAllData", dataList.toArray(new String[0]));
         return result;
     }
 
@@ -32,7 +32,7 @@ public class RegisterServiceImpl implements RegisterService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("pro_getDataProsesById", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("reg_getDataById", dataList.toArray(new String[0]));
         return result;
     }
 
