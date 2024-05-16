@@ -9,6 +9,6 @@ public interface RegisterService {
     String detailRegister(Map<String, Object> data);
 //    String editRegister(Map<String, Object> data);
     String setStatusRegister(Map<String, Object> data);
-    String getListRegister(Map<String, Object> data);
+    String getListKodePos(Map<String, Object> data);
 }
 

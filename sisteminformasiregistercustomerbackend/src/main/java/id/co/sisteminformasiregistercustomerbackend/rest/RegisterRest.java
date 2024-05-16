@@ -49,6 +49,7 @@ public class RegisterRest {
             String result = mRegisterService.createRegister(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
+            System.out.println(e.toString());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to create data", e);
         }
     }
@@ -86,14 +87,15 @@ public class RegisterRest {
         }
     }
 
-    @PostMapping("/GetListRegister")
-    public ResponseEntity<String> getListRegister(@RequestBody Map<String, Object> data) {
+    @PostMapping("/GetListKodePos")
+    public ResponseEntity<String> getListKodePos(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
-            String result = mRegisterService.getListRegister(encodedData);
+            String result = mRegisterService.getListKodePos(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to get list", e);
         }
     }
+
 }

@@ -22,7 +22,7 @@ public class RegisterServiceImpl implements RegisterService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("reg_getAllData", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("reg_getDataCustomer", dataList.toArray(new String[0]));
         return result;
     }
 
@@ -38,10 +38,13 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public String createRegister(Map<String, Object> data) {
+
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
+
+        System.out.println(dataList);
         String result = polmanAstraRepository.callProcedure("reg_createRegister", dataList.toArray(new String[0]));
         return result;
     }
@@ -77,12 +80,12 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     @Override
-    public String getListRegister(Map<String, Object> data) {
+    public String getListKodePos(Map<String, Object> data) {
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("pro_getListProses", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("reg_getListKodePos", dataList.toArray(new String[0]));
         return result;
     }
 }
