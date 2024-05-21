@@ -1,9 +1,12 @@
 package id.co.sisteminformasiregistercustomerbackend.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import id.co.sisteminformasiregistercustomerbackend.model.Register;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -87,4 +90,5 @@ public class PolmanAstraRepository {
             return null;
         }
     }
+
 }
