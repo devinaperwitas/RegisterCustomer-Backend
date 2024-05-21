@@ -101,6 +101,7 @@ public class RegisterRest {
 
     @PostMapping("/SetStatusRegister")
     public ResponseEntity<String> setStatusRegister(@RequestBody Map<String, Object> data) {
+        //System.out.println(data);
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
             String result = mRegisterService.setStatusRegister(encodedData);
