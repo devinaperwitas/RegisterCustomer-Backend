@@ -44,6 +44,7 @@ public class RegisterRest {
 
     @PostMapping("/CreateRegister")
     public ResponseEntity<String> createRegister(@RequestBody Map<String, Object> data) {
+        System.out.println(data);
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
             String result = mRegisterService.createRegister(encodedData);

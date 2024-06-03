@@ -10,6 +10,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 
+import static org.hibernate.query.sqm.tree.SqmNode.log;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/Utilities")
@@ -49,6 +51,7 @@ public class UtilitiesRest {
             String result = utilitiesService.getListProvinsi(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
+            System.out.println("Error Hasim :"+e);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to get list provinsi", e);
         }
     }
