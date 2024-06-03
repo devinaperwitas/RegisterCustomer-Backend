@@ -5,6 +5,7 @@ import id.co.sisteminformasiregistercustomerbackend.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class RegisterServiceImpl implements RegisterService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("reg_getDataCustomer", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("reg_getAllData", dataList.toArray(new String[0]));
         return result;
     }
 
